@@ -1,0 +1,320 @@
+/* Variables globales para la paleta de colores y fuentes de la interfaz */
+:root {
+    --color-principal: #366def;     
+    --color-secundario: #4a90e2;    
+    --color-exito: #2ecc71;         
+    --color-fondo: #cfcfcf;         
+    --color-tarjeta: #ffffff;       
+    --color-texto: #686868;         
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dark-mode {
+    --color-fondo: #121212;
+    --color-tarjeta: #1e1e1e;
+    --color-texto: #e0e0e0;
+    --color-principal: #34105e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilos de la pantalla de acceso fija que cubre toda la pantalla */
+#pantalla-acceso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.tarjeta-acceso {
+    background-color: var(--color-tarjeta);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.tarjeta-acceso h2 {
+    margin-bottom: 20px;
+    color: var(--color-principal);
+    border: none;
+    padding: 0;
+}
+
+.tarjeta-acceso input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--color-tarjeta);
+    color: var(--color-texto);
+}
+
+.tarjeta-acceso button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.btn-enlace {
+    background: none;
+    border: none;
+    color: var(--color-secundario);
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Estilos del encabezado y menú de navegación usando Flexbox */
+header {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+nav ul li a:hover {
+    opacity: 0.8;
+}
+
+#btn-modo {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Distribución del contenedor principal y separación de las secciones */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+}
+
+section {
+    background-color: var(--color-tarjeta);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--color-principal);
+    border-bottom: 2px solid var(--color-fondo);
+    padding-bottom: 8px;
+}
+
+/* Diseño interactivo y limpio para la tabla del horario escolar */
+.contenedor-tabla {
+    overflow-x: auto; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+th {
+    background-color: var(--color-secundario);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Estilos para el formulario de registro y la lista dinámica de tareas */
+#formulario-tarea {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.grupo-control {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px; 
+}
+
+.grupo-control label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.grupo-control input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--color-tarjeta);
+    color: var(--color-texto);
+}
+
+#formulario-tarea button {
+    background-color: var(--color-exito);
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+#formulario-tarea button:hover {
+    background-color: #27ae60;
+}
+
+.lista-tareas-contenedor h3 {
+    margin-bottom: 15px;
+}
+
+#lista-tareas {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-tarea {
+    background-color: var(--color-fondo);
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--color-secundario);
+}
+
+.item-tarea.completada {
+    text-decoration: line-through;
+    opacity: 0.6;
+    border-left-color: var(--color-exito);
+}
+
+.btn-eliminar {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Clases de utilidad globales y Media Queries para adaptabilidad */
+.oculto {
+    display: none !important;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    #formulario-tarea {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .grupo-control {
+        width: 100%;
+    }
+}
+
+/* Estilos para el botón de cerrar sesión y su contenedor */
+.controles-header {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-peligro {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-peligro:hover {
+    background-color: #c0392b;
+}

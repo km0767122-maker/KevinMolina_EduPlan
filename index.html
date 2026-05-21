@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlan - Agenda Escolar Inteligente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="pantalla-acceso">
+        <div class="tarjeta-acceso">
+            <div id="seccion-registro">
+                <h2>Crear Cuenta</h2>
+                <form id="form-registro">
+                    <input type="text" id="reg-usuario" placeholder="Nombre de usuario" required>
+                    <input type="password" id="reg-password" placeholder="Contraseña" required>
+                    <button type="submit">Registrarse</button>
+                </form>
+                <p>¿Ya tienes cuenta? <button id="ir-a-login" class="btn-enlace">Inicia sesión aquí</button></p>
+            </div>
+
+            <div id="seccion-login" class="oculto">
+                <h2>Iniciar Sesión</h2>
+                <form id="form-login">
+                    <input type="text" id="log-usuario" placeholder="Usuario" required>
+                    <input type="password" id="log-password" placeholder="Contraseña" required>
+                    <button type="submit">Ingresar</button>
+                </form>
+                <p>¿No tienes cuenta? <button id="ir-a-registro" class="btn-enlace">Regístrate aquí</button></p>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <h1>📚 EduPlan</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#horario">Mi Horario</a></li>
+                <li><a href="#tareas">Gestión de Tareas</a></li>
+            </ul>
+        </nav>
+        <button id="btn-modo">🌙 Modo Oscuro</button>
+        <button id="btn-cerrar-sesion" class="btn-peligro">🚪 Cerrar Sesión</button>
+    </header>
+
+    <main>
+        <section id="horario">
+            <h2>Mi Horario Semanal</h2>
+            <div class="contenedor-tabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>07:45 - 10:45</td>
+                            <td>libre</td>
+                            <td>Seminario de Investigacion</td>
+                            <td>Procedimientos Almacenados en Datos</td>
+                            <td>Programacion web</td>
+                            <td>Libre</td>
+                        </tr>
+                        <tr>
+                            <td>10:45 - 12:45</td>
+                            <td>Cálculo</td>
+                            <td>Gestión de Proyectos</td>
+                            <td>Cálculo</td>
+                            <td>Física</td>
+                            <td>Tutoría</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="tareas">
+            <h2>Registro de Tareas Pendientes</h2>
+            <form id="formulario-tarea">
+                <div class="grupo-control">
+                    <label for="materia">Materia / Asignatura:</label>
+                    <input type="text" id="materia" placeholder="Ej. Programación Web" required>
+                </div>
+                <div class="grupo-control">
+                    <label for="descripcion">Descripción de la Tarea:</label>
+                    <input type="text" id="descripcion" placeholder="Ej. Crear el archivo index.html" required>
+                </div>
+                <div class="grupo-control">
+                    <label for="fecha">Fecha de Entrega:</label>
+                    <input type="date" id="fecha" required>
+                </div>
+                <button type="submit">➕ Agregar Tarea</button>
+            </form>
+
+            <div class="lista-tareas-contenedor">
+                <h3>Mis Pendientes</h3>
+                <ul id="lista-tareas"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EduPlan - Desarrollado por Kevin Molina. Proyecto con fines educativos.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
